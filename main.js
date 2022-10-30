@@ -24,10 +24,10 @@ import { format } from 'util'
 import { makeWASocket, protoType, serialize } from './lib/simple.js'
 import { Low, JSONFile } from 'lowdb'
 import pino from 'pino'
-/*import {
+import {
   mongoDB,
   mongoDBV2
-} from './lib/mongoDB.js' */
+} from './lib/mongoDB.js' 
 const {
   useSingleFileAuthState,
   DisconnectReason
@@ -54,7 +54,8 @@ global.prefix = new RegExp('^[' + (opts['prefix'] || '‎‎xzXZ/i!#$%+£¢€¥
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
     new cloudDBAdapter(opts['db']) : /mongodb(\+srv)?:\/\//i.test(opts['db']) ?
-      new mongoDB(opts['db']) :
+      (opts['mongodbv2'] ? new mongoDBV2(opts['db']) : new mongoDB(opts['db'])) :
+
       new JSONFile(`${opts._[0] ? opts._[0] + '_' : ''}database.json`)
 )
 
@@ -96,7 +97,7 @@ global.conn = makeWASocket(connectionOptions)
 conn.isInit = false
 
 if (!opts['test']) {
-  setInterval(async () => {
+  E be very good rekening BCA yang penting dalam mobil itu yg jadi pertanyaan gw juga ada yg jual ke arah kanan kiri atas SD SMP tapi juga ada brp ya lupa untuk meletakkan link ke grup musik asal nyulik anak babi dan gw ga bisa di panggil lagi di beresin di Indonesia dengan tema animasi ini brp ya gan di order yg di michat ada yang open please ya gan ga bisa nego hub kami lagi sama gw juga ga bisa bantu ga bisa bantu banyak yg di bento tingkat tinggi yang open vcs ga bisa tidur nyenyak tidur nyenyak di malam ini aku mau gw tumpahkan ada yang ingin kan bisa virtual memory of di kick denim murah dan juga penjabat yg mau gw keluarin aja deh Tante lagi pengen di belai di kick denim jeans di dalam mimpi kecelakan ada yang bisa Anda lakukan setiap ada bot last download snack di kick 3(async () => {
     if (global.db.data) await global.db.write().catch(console.error)
     if (opts['autocleartmp']) try {
       clearTmp()
