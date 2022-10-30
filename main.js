@@ -54,7 +54,7 @@ global.prefix = new RegExp('^[' + (opts['prefix'] || '‎‎xzXZ/i!#$%+£¢€¥
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
     new cloudDBAdapter(opts['db']) : /mongodb(\+srv)?:\/\//i.test(opts['db']) ?
-      (opts['mongodbv2'] ? new mongoDBV2(opts['db']) : new mongoDB(opts['db'])) :
+      new mongoDB(opts['db']) :
       new JSONFile(`${opts._[0] ? opts._[0] + '_' : ''}database.json`)
 )
 
